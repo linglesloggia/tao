@@ -6,7 +6,7 @@
 \begin{document}
 	\section*{Ejercicio 1 - Convexidad}
 	
-	Recordamos del teórico que $f$ es convexa si $$f(t \cdot x + (1-t) \cdot y) \leq t \cdot f(x) + (1 - t) \cdot f(y) \forall x, y \in R^n, t \in [0,1]$$
+	Recordamos del teórico que $f$ es convexa si $$f(t \cdot x + (1-t) \cdot y) \leq t \cdot f(x) + (1 - t) \cdot f(y) ,\hspace{6pt}   \forall x, y \in R^n, t \in [0,1]$$
 	
 	\subsection*{a) $g(x) = \sum_{i}^{} w_i f_i(x)$}
 	
@@ -20,7 +20,7 @@
 	Agrupamos los terminos multiplicados por $t$ por un lado y $(1-t)$ por otro
 	$$g(t \cdot x + (1-t) \cdot y) \leq t \cdot \left[w_1 f_1(x) + w_2 f_2(x) + ... + w_k f_k(x)\right] + (1-t) \cdot \left[ ( w_1 f_1(y) + w_2 f_2(y) + ... + w_k f_k(y)\right]$$
 	$$g(t \cdot x + (1-t) \cdot y) \leq t \sum_{i} w_i f_i(x) + (1-t) \sum_{i} w_i f_i(y) = t g(x) + (1-t) g(y)$$
-	$\Rightarrow$ se cumple que g(x) es convexa
+	$\Rightarrow$ se cumple que g(x) es convexa.
 	
 	\subsection*{b) $l(x) = f_1(Ax + b)$}
 	
@@ -30,7 +30,46 @@
 	
 		Por convexidad de la función $f_1$ se cumple que
 		$$l(tx + (1-t)y) =  f_1(t (Ax + b) + (1-t) (Ay + b))) \leq t f_1(Ax + b) + (1-t) f_1(Ay + b) = t l(x) + (1-t) l(y)$$
-		$\Rightarrow$ l(x) es convexa
+		$\Rightarrow$ l(x) es convexa.
 		
 	\subsection*{c) $Y = \cap_{i \in N} X_i$}
+	
+	Del teórico sabemos que un conjunto $C \subset R^n$ es convexo si se cumple:
+	
+	$$\forall x,y \in C,\hspace{6pt} tx + (1-t)y \in C, \forall t \in [0,1]$$
+	
+	Si tomamos dos puntos cualesquiera $(x,y)$ que pertenezcan a $Y$ sabemos por definición que también pertenecerán a la intersección de todos los $X_i$. Luego por convexidad de los $X_i$ esos puntos cumplen que $xt + (1-t)y \in X_i, \hspace{6pt} \forall i$ y, por ser $Y$ la intersección, $xt + (1-t)y \in Y$. Lo mismo aplica al tomar cualquier otro par $(x,y)\in Y$ $\Rightarrow$ $Y$ es convexa. 
+	
+	\subsection*{d) $ B(C,r) = \{x \in R^n : ||x-c|| \leq r\} $}
+	
+	Sean $x,y \in B(C,r)$ entonces debemos verificar si se cumple que $tx + (1-t)y \in B(C,r)$ o lo que es lo mismo, que 
+	$||C - [tx + (1-t)y]|| < r$. 
+	
+	Partiendo de $[tx + (1-t)y]$, sabemos que
+	
+	$$||C - [tx + (1-t)y]|| = ||tC + (1-t)C - [tx + (1-t)y]|| = || t(C - x) + (1-t) (C - y) $$
+	
+	Utilizando la desigualdad triangular, se tiene que 
+	
+	$$||C - [tx + (1-t)y]|| \leq ||t(C-x)|| + ||(1-t)(C-y)|| = t\cdot||(C-x)|| + (1-t)\cdot||(C-y)||$$
+	
+	Ahora, sabemos que tanto $x$ como $y$ pertenecen a $B(C,r)$, con lo cual $||(C-x)|| < r$ y $||(C-y)|| < r$.
+	
+	Lo anterior se transforma entonces en
+	
+	$$||C - [tx + (1-t)y]|| \leq tr + (1-t)r = r$$
+	
+	Finalmente, verificamos que $[tx + (1-t)y] \in B(C,r)$ para cualquier par $x,y$ en $B(C,r)$ y $\forall t \in [0,1]$ 
+	
+	$\Rightarrow$ $B(C,r)$ es convexa.
+	
+	\section*{Ejercicio 2 - Interpretación geométrica}
+	
+	\subsection*{a) }
+	
+	Debemos probar que la función de costo $c(x,y) = -log(y^2 - x^2)$ es convexa. \\
+	
+	En primer lugar, se puede observar que $y^2 - x^2 = (y-x)^2$
+	
+	
 \end{document}
