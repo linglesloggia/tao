@@ -1,0 +1,36 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\begin{document}
+	\section*{Ejercicio 1 - Convexidad}
+	
+	Recordamos del teórico que $f$ es convexa si $$f(t \cdot x + (1-t) \cdot y) \leq t \cdot f(x) + (1 - t) \cdot f(y) \forall x, y \in R^n, t \in [0,1]$$
+	
+	\subsection*{a) $g(x) = \sum_{i}^{} w_i f_i(x)$}
+	
+	$$g(x) = w_1 f_1(x) + w_2 f_2(x) + ... + w_k f_k(x)$$	
+	
+	$$g(t \cdot x + (1-t) \cdot y) = w_1 f_1(t \cdot x + (1-t) \cdot y) + w_2 f_2(t \cdot x + (1-t) \cdot y) + ... + w_k f_k(t \cdot x + (1-t) \cdot y)$$
+	
+	 Por convexidad de las funciones $f_i$ se cumple que
+	$$g(t \cdot x + (1-t) \cdot y) \leq w_1 \left(t f_1(x) + (1-t) f_1(y)\right) + ... + w_k \left(t f_k(x) + (1-t) f_k(y)\right)$$
+	
+	Agrupamos los terminos multiplicados por $t$ por un lado y $(1-t)$ por otro
+	$$g(t \cdot x + (1-t) \cdot y) \leq t \cdot \left[w_1 f_1(x) + w_2 f_2(x) + ... + w_k f_k(x)\right] + (1-t) \cdot \left[ ( w_1 f_1(y) + w_2 f_2(y) + ... + w_k f_k(y)\right]$$
+	$$g(t \cdot x + (1-t) \cdot y) \leq t \sum_{i} w_i f_i(x) + (1-t) \sum_{i} w_i f_i(y) = t g(x) + (1-t) g(y)$$
+	$\Rightarrow$ se cumple que g(x) es convexa
+	
+	\subsection*{b) $l(x) = f_1(Ax + b)$}
+	
+	$$l(tx + (1-t)y) = f_1(A(tx + (1-t)y) + b)$$
+	Observamos que $tb + (1-t)b = b$ por lo que lo incluimos en los respectivos terminos
+	$$f_1(A(tx + (1-t)y) + b) = f_1(t (Ax + b) + (1-t) (Ay + b))$$
+	
+		Por convexidad de la función $f_1$ se cumple que
+		$$l(tx + (1-t)y) =  f_1(t (Ax + b) + (1-t) (Ay + b))) \leq t f_1(Ax + b) + (1-t) f_1(Ay + b) = t l(x) + (1-t) l(y)$$
+		$\Rightarrow$ l(x) es convexa
+		
+	\subsection*{c) $Y = \cap_{i \in N} X_i$}
+\end{document}
