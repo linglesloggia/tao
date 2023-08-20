@@ -69,7 +69,60 @@
 	
 	Debemos probar que la función de costo $c(x,y) = -log(y^2 - x^2)$ es convexa. \\
 	
-	En primer lugar, se puede observar que $y^2 - x^2 = (y-x)^2$
+	En primer lugar, se puede observar que $y^2 - x^2 = (y-x)(y+x)$. Por lo que $c(x,y) = -log(y^2 - x^2) = -log((y-x)(y+x))$.
 	
+	Luego, utilizando la sugerencia se obtiene:
+	
+	$$c(x,y) = -log(y-x)-log(y+x)$$
+	
+	Ahora podemos analizar cada termino de la suma por separado, analizar si es o no convexa. Pues, por resultado del ejercicio 1.a, suma de funciones convexas, es convexa. 
+	
+	Llamaremos $c_1(x,y) = -log(y-x)$ y $c_2(x,y) = -log(y+x)$, debemos analizar si la Hessiana es semidefinida positiva. 
+	
+	$$\frac{\partial^2 c_1}{\partial x^2} = \frac{1}{(y-x)^2}$$
+	$$\frac{\partial^2 c_1}{\partial y^2} = \frac{1}{(y-x)^2}$$
+	$$\frac{\partial^2 c_1}{\partial xy} = \frac{-1}{(y-x)^2}$$
+	
+	Observamos que $\frac{\partial^2 c_1}{\partial xy} = \frac{\partial^2 c_1}{\partial yx}$
+	
+	Su matriz Hessiana queda definida de la siguiente manera
+	
+	\[ H_{c_1} = \begin{bmatrix}
+		\frac{1}{(y-x)^2} & \frac{-1}{(y-x)^2}\\
+		\frac{-1}{(y-x)^2} & \frac{1}{(y-x)^2}
+	\end{bmatrix} \]
+	
+	Y continuamos calculando sus valores propios:
+	
+	$$|H_{c_1} - \lambda I| = (\frac{1}{(y-x)^2}-\lambda)^2 - \frac{1}{(y-x)^4} = (\frac{1}{(y-x)^4}-\frac{2\lambda }{(y-x)^2} + \lambda^2 ) - \frac{1}{(y-x)^4}$$
+	
+	De lo anterior se deduce que $\lambda_1 = 0$ y $\lambda_2 = \frac{2}{(y-x)}$. Observamos que en el dominio de la función ($y > |x|$) ambos valores propios son no-negativos. Por lo tanto concluimos que $c_1(x,y)$ es convexa.
+	
+	Ahora observemos qué sucede con $c_2(x,y)$. En este caso tenemos
+	
+	$$\frac{\partial^2 c_1}{\partial x^2} = \frac{1}{(y+x)^2}$$
+	$$\frac{\partial^2 c_1}{\partial y^2} = \frac{1}{(y+x)^2}$$
+	$$\frac{\partial^2 c_1}{\partial xy} = \frac{1}{(y+x)^2}$$
+	
+	Observamos que $\frac{\partial^2 c_2}{\partial xy} = \frac{\partial^2 c_2}{\partial yx}$
+	
+	En el caso de $c_2$ se obtiene la siguiente matriz Hessiana
+	
+	\[ H_{c_1} = \begin{bmatrix}
+		\frac{1}{(y+x)^2} & \frac{1}{(y+x)^2}\\
+		\frac{1}{(y+x)^2} & \frac{1}{(y+x)^2}
+	\end{bmatrix} \]
+	
+	Y sus valores propios se calculan a continuación
+	
+	$$|H_{c_1} - \lambda I| = (\frac{1}{(y+x)^2}-\lambda)^2 - \frac{1}{(y+x)^4} = (\frac{1}{(y+x)^4}-\frac{2\lambda }{(y+x)^2} + \lambda^2 ) - \frac{1}{(y+x)^4}$$
+	
+	De lo que se deduce que $\lambda_2 = 0$ y $\lambda_2 = \frac{2}{(y+x)^2}$. Por lo cual ambos valores propios son no-negativos y con ello, la matriz Hessiana es semidefinida positiva y se concluye que $c_2(x,y)$ es convexa.
+	
+	A partir de los resultados anteriores, demostramos que $c_1(x,y)$ y $c_2(x,y)$ son convexas, y por el resultado del ejercicio 1.a se concluye que $c(x,y)$ es convexa.
+	
+	\subsection*{b) }
+	
+	En primer lugar, podemos observar que la restricción $x^2 + y^2 \leq 1$ es lo mismo que decir 
 	
 \end{document}
