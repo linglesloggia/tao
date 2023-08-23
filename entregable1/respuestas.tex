@@ -3,6 +3,9 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage[]{placeins}
+\graphicspath{ {./img/} }
+
 \begin{document}
 	\section*{Ejercicio 1 - Convexidad}
 	
@@ -123,6 +126,37 @@
 	
 	\subsection*{b) }
 	
-	En primer lugar, podemos observar que la restricción $x^2 + y^2 \leq 1$ es lo mismo que decir 
+	En primer lugar, podemos observar que la restricción $x^2 + y^2 \leq 1$ es lo mismo que decir que $(x,y) \in B(0, 1)$. Por el ejercicio 1d. podemos concluir que ese conjunto es convexo. Por otro lado, los conjuntos tales que $x \geq 0$, $2x-y \leq 0$, $y\geq 1/2$ son todos semiplanos. Los puntos pertenecientes a un hiperplano en $R^2$ son un conjunto convexo.
+	
+	\FloatBarrier 
+	
+	\subsection*{c) }
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=1.2\textwidth]{ej2-1.png}
+		\caption{Limites de la región factible a la izquierda. Curvas de nivel a la derecha.}
+		\label{ej2-1}
+		
+	\end{figure}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=1\textwidth]{ej2-2.png}
+		\caption{Curvas de nivel, van de violeta a amarillo mientras más alto es su valor. Y en blanco se puede observar la región factible.}
+		\label{ej2-2}
+	\end{figure}
+	
+	\FloatBarrier 
+	
+	\subsection*{d) }
+	
+	Podemos observar los valores de las curvas de nivel, en particular, nos interesa la intersección de la curva de nivel correspondiente al valor cero con el conjunto factible. Si se observa de la Fig. \ref{ej2-2} la intersección de la curva de nivel correspondiente al valor funcional cero y la región factible (en blanco) se da en el punto $(x,y) = (0,1)$. Lo cual implica que ese punto es solución del problema.
+	
+
+\section*{Ejercicio 3 - Puntos críticos y óptimos globales}
+
+
+	
 	
 \end{document}
